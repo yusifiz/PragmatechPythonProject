@@ -2,12 +2,13 @@ from flask import Flask,redirect,url_for,render_template,request,send_file,sessi
 from pytube import YouTube
 from tempfile import TemporaryDirectory
 from io import BytesIO
+
 app=Flask(__name__)
 app.config['SECRET_KEY'] = "MySecret"
 
-
 @app.route('/',methods=['GET','POST'])
 def index():
+    
     if request.method=='POST':
         session['link'] = request.form.get('url')
         url = YouTube(session['link'])
@@ -37,6 +38,8 @@ def download_mp3():
                 file_bytes = f.read()
             return send_file(BytesIO(file_bytes),download_name=audio_name, as_attachment=True)
     return redirect(url_for('index'))
+
+
         
 if __name__ == '__main__':
     
