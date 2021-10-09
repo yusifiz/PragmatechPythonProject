@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = "MySecret"
 # app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///example.db'
 
 
-ENV = 'prod'
+ENV = 'product'
 
 if ENV == 'dev':
     app.debug = True
