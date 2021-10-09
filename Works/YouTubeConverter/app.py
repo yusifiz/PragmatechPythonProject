@@ -9,14 +9,14 @@ app.config['SECRET_KEY'] = "MySecret"
 # app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///example.db'
 
 
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
     # app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
     app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:yusif@localhost:5432/url'
 else:
-    app.debug = False
+    app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI']='postgresql://hqsmehndaqglmb:2319825064d8b3162275e8530588558884037bc872f8530a74e7b65b7620ccd3@ec2-23-23-162-138.compute-1.amazonaws.com:5432/d8fsij8tfddd3a'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
