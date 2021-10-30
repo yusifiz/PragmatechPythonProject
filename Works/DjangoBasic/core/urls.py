@@ -15,17 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from blog.views import blog
-from about.views import about
+# from blog.views import blog
+# from about.views import about
+from blog.admin import blog
+
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',admin.site.urls),
+    path('blogadmin/', blog.urls),
     path('',include('blog.urls', namespace='blog')),
     path('about/',include('about.urls',namespace='about')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 
-admin.site.index_title = 'Admin Panel (by: yusifiz)'
-admin.site.site_header = 'Admin'
-admin.site.site_title = 'Django'
+# admin.site.index_title = 'Admin Panel (by: yusifiz)'
+# admin.site.site_header = 'Admin'
+# admin.site.site_title = 'Django'
