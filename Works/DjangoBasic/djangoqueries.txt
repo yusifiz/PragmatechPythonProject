@@ -42,4 +42,4 @@ entry.authors.add(john, paul, george, ringo) # add objects
 
 Entry.objects.filter(pub_date__year=2006) # filter element which pub_date__year=2006
 Entry.objects.order_by('headline') # order element which headline
-Entry.objects.filter(blog__name='Beatles Blog') # filter element which blog__name='Beatles Blog'
+Entry.objects.filter(blog__name='Beatles Blog') # filter element which blog__name='Beatles Blog' ...
