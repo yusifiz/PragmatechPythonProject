@@ -8,6 +8,7 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=63, verbose_name='Muellif',null=True,blank=True)
     slug = models.SlugField(max_length=255, null=True)
+    image = models.ImageField(upload_to="blog/", null=True)
 
     def get_absolute_url(self):
         return reverse('blog:blog-detail', args=[self.slug])
