@@ -13,7 +13,7 @@ class Blog(models.Model):
     text = models.TextField(help_text='Main info..')
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=63, verbose_name='Muellif',null=True,blank=True)
-    slug = models.SlugField(max_length=255, null=True,unique=True)
+    slug = models.SlugField(max_length=255, null=True,unique=True,blank=True)
     image = models.ImageField(upload_to="blog/", null=True)
 
 
