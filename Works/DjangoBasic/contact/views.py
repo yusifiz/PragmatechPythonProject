@@ -1,6 +1,7 @@
 from django import forms
 from django.shortcuts import redirect, render
 from . forms import ContactForm
+from contact.utils.validators import ValidationError
 
 
 
@@ -11,4 +12,5 @@ def contact(request):
         if form.is_valid():
             form.save()
             return redirect('/')
+        
     return render(request, 'contact.html', {'form': form})
