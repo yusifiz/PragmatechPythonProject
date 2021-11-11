@@ -4,12 +4,13 @@ from django.contrib import admin
 
 from .models import Blog
 
-
-class BlogAdmin(admin.AdminSite):
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
     site_header = 'My custom header'
+    fields = ('title','text','author','image',)
 
-blog = BlogAdmin(name='Blog App Section')
+# blog = BlogAdmin(name='Blog App Section')
 
 
-blog.register(Blog)
-admin.site.register(Blog)
+# blog.register(Blog)
+# admin.site.register(Blog)

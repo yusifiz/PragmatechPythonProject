@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path,include
 # from blog.views import blog
 # from about.views import about
-from blog.admin import blog
+# from blog.admin import blog
 
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     path('admin/',admin.site.urls),
-    path('blogadmin/', blog.urls),
+    # path('blogadmin/', blog.urls),
     path('',include('blog.urls', namespace='blog')),
     path('about/',include('about.urls',namespace='about')),
     path('contact/',include('contact.urls',namespace='contact'))
