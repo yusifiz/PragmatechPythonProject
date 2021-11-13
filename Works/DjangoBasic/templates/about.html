@@ -11,8 +11,10 @@
 {% block content %} 
 
 
+{% filter force_escape|lower %}
+About'un esas kontenti
+{% endfilter %}
 
-<h1 class="m-5">Aboutun esas kontenti</h1>
 {% for about in abouts %}
 
 

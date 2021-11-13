@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% load static %}
+{% load static custom_filter custom_tag %}
 
 {% block css %} 
 
@@ -11,16 +11,21 @@
 <h1 class="m-5">Blogun esas kontenti</h1>
 {% for blog in blogs %}
 
+<h3>Blog - {{ forloop.counter }}</h3>
 
 <div class="card m-5" style="width: 18rem;">
   <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{blog.title}}</h5>
-    <p class="card-text">{{blog.text}}</p>
+    <h5 class="card-title">{{ blog.title|my_uppercase }}</h5>
+    <p class="card-text text-warning">{{ blog.text|truncatechars:4 }}</p>
+    <p class="card-text text-warning">Created : {{ blog.created_at|date:"M Y" }}</p>
+    {% current_time "%Y-%m-%d %I:%M %p" as the_time %}
+    <p class="text-danger">My custom tag for date : {{ the_time }}.</p>
     <a href="{{ blog.get_absolute_url }}" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-
+{% empty %}
+<h1>Blog is not available</h1>
 {% endfor %}
 
 {% endblock %}
