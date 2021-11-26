@@ -11,3 +11,7 @@
 ## Docker Container nədir?
 
 * Docker Container OS'i əvəz edən bir mühit yaradır. Bunun sayəsində fərqli operation system'lərdə çalışan developerlər eyni mühitdə işləyə bilirlər. Bunun ən böyük faydası daha sürətli sistem olmağıdır.
+
+## Virtual maşın nədir?
+
+* Bir əməliyyat sistemində işləyərkən, digər bir əməliyyat sistemini istifadə etmək üçün yüklədiyimiz proqramdır. Bu proqram defoult əməliyyat sisteminin içərisində digər əməliyyat sistemi üçün yaddaş və ram ayırmağa imkan yaradır.
