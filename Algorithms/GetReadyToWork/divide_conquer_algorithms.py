@@ -31,3 +31,24 @@ maximum = divideAndConquer_Max(arr, 0, 9)
 print("The maximum number in the array is: ", maximum)
 
 
+## Find minimum elements
+
+def divideAndConquer_Min(arr, ind, len):
+	minimum = 0
+	if (ind >= len - 2):
+		if (arr[ind] < arr[ind + 1]):
+			return arr[ind]
+		else:
+			return arr[ind + 1]
+
+	minimum = divideAndConquer_Min(arr, ind + 1, len)
+
+	if (arr[ind] < minimum):
+		return arr[ind]
+	else:
+		return minimum
+
+
+minimum = divideAndConquer_Min(arr, 0, 9)
+
+print("The minimum number in the array is: ", minimum)
